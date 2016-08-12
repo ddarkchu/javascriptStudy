@@ -1,46 +1,76 @@
+<!DOCTYPE html>
 <html>
-
 <head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="./css/css.css" />
 <link rel="stylesheet" type="text/css" href="./js/highlightjs/default.css" />
-<script src="./highlightjs/highlight.pack.js"></script>
 <link rel="stylesheet" type="text/css" href="./js/jquery.fullpage/jquery.fullPage.css" />
+
+<script src="./js/highlightjs/highlight.pack.js"></script>
 <script src="./js/jquery/jquery-3.1.0.js"></script>
 <script src="./js/jquery.fullpage/jquery.fullpage.js"></script>
 <script src="./js/javascript.js"></script>
 </head>
 
-<body>
+<body class="bgblack color_white">
 	<div id="fullpage">
-		<div class="section">welcome javascript</div>
-		<div class="section">
-			<div>
-				<p>Syntax</p>
+		<ol start="1">
+			<div class="section txtc">
+				<h1>welcome javascript</h1>
 			</div>
-			<div>
-				<pre>
-					<code class="javascript">
-          var x; // declaring a variable
-
-          x = 3 + y; // assigning a value to the variable `x`
-
-          foo(x, y); // calling function `foo` with parameters `x` and `y` obj.bar(3); // calling method `bar` of object `obj`
-
-          // A conditional statement
-          if (x === 0) { // Is `x` equal to zero?
-
-          x=123; }
-
-              // Defining function `baz` with parameters `a` and `b`
-          function baz(a, b) { return a + b;
-
-          }
-        </code>
-				</pre>
+			<div class="section">
+				<li><h2>Syntax</h2></li>
 			</div>
-		</div>
-		<div class="section">Some section</div>
-		<div class="section">Some section</div>
+			<div class="section">
+				<div>
+					<pre>
+						<code class="javascript">
+	var x; // 변수 선언
+	var y = 1; // y 변수에 1 저장
+	x = 3 + y; // 변수 x에 값 연산값 저장
+	
+	sumAndPrint(x, y); // 함수 실행
+	
+	// 조건문 실행
+	if (x === 0) { // x 값이 0이고 숫자 타입인지 조건 확인.
+		x = 123;
+	}
+	
+	// 함수 정의 기명함수 방식이고 변수로 x, y를 받음
+	function sumAndPrint(x, y) {
+		var sum = x + y;
+		console.log("sum: " + sum);
+		return sum;
+	}
+	
+	var z = {
+		objectFunction : sumAndPrint // z 객체에 함수 정의
+	}
+	z.objectFunction(1, 2);	// 객체의 함수 실행
+						</code>
+					</pre>
+				</div>
+			</div>
+			<div class="section">
+				<li><h2>기초문법</h2></li>
+			</div>
+			<div class="section">
+				<h3>statements - 자바스크립트 실행되는 명령문</h3>
+				<ol>
+					<li>stateMents는 ; 으로 구분되어 집니다.</li>
+					<li>종류는 Values, Operators, Expressions, Keywords, Comments</li>
+				</ol>
+				<div>
+					<pre>
+						<code class="javascript">
+var x; // 변수 선언
+1 + 2;
+						</code>
+					</pre>
+				</div>
+			</div>
+			<div class="section">Some section</div>
+		</ol>
 	</div>
 </body>
-
 </html>
