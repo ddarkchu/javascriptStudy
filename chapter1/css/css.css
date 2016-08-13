@@ -36,9 +36,9 @@
 .li_s{
 	list-style-type: square;
 }
-.section{
+/*.section{
 	display: none !important;
 }
 .section.do{
 	display: block !important;
-}
+}*/
