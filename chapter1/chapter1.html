@@ -1,76 +1,326 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="./css/css.css" />
-<link rel="stylesheet" type="text/css" href="./js/highlightjs/default.css" />
-<link rel="stylesheet" type="text/css" href="./js/jquery.fullpage/jquery.fullPage.css" />
 
-<script src="./js/highlightjs/highlight.pack.js"></script>
-<script src="./js/jquery/jquery-3.1.0.js"></script>
-<script src="./js/jquery.fullpage/jquery.fullpage.js"></script>
-<script src="./js/javascript.js"></script>
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" type="text/css" href="./js/highlightjs/default.css" />
+  <link rel="stylesheet" type="text/css" href="./js/jquery.fullpage/jquery.fullPage.css" />
+  <link rel="stylesheet" type="text/css" href="./css/css.css" />
+  <script src="./js/highlightjs/highlight.pack.js"></script>
+  <script src="./js/highlightjs/numbers/highlightjs-line-numbers.min.js"></script>
+  <script src="./js/jquery/jquery-3.1.0.js"></script>
+  <script src="./js/jquery.fullpage/jquery.fullpage.js"></script>
+  <script src="./js/javascript.js"></script>
 </head>
 
 <body class="bgblack color_white">
-	<div id="fullpage">
-		<ol start="1">
-			<div class="section txtc">
-				<h1>welcome javascript</h1>
-			</div>
-			<div class="section">
-				<li><h2>Syntax</h2></li>
-			</div>
-			<div class="section">
-				<div>
-					<pre>
-						<code class="javascript">
-	var x; // 변수 선언
-	var y = 1; // y 변수에 1 저장
-	x = 3 + y; // 변수 x에 값 연산값 저장
-	
-	sumAndPrint(x, y); // 함수 실행
-	
-	// 조건문 실행
-	if (x === 0) { // x 값이 0이고 숫자 타입인지 조건 확인.
-		x = 123;
-	}
-	
-	// 함수 정의 기명함수 방식이고 변수로 x, y를 받음
-	function sumAndPrint(x, y) {
-		var sum = x + y;
-		console.log("sum: " + sum);
-		return sum;
-	}
-	
-	var z = {
-		objectFunction : sumAndPrint // z 객체에 함수 정의
-	}
-	z.objectFunction(1, 2);	// 객체의 함수 실행
-						</code>
-					</pre>
-				</div>
-			</div>
-			<div class="section">
-				<li><h2>기초문법</h2></li>
-			</div>
-			<div class="section">
-				<h3>statements - 자바스크립트 실행되는 명령문</h3>
-				<ol>
-					<li>stateMents는 ; 으로 구분되어 집니다.</li>
-					<li>종류는 Values, Operators, Expressions, Keywords, Comments</li>
-				</ol>
-				<div>
-					<pre>
-						<code class="javascript">
-var x; // 변수 선언
-1 + 2;
-						</code>
-					</pre>
-				</div>
-			</div>
-			<div class="section">Some section</div>
-		</ol>
-	</div>
+  <div id="fullpage">
+    <ol start="1">
+      <div class="section txtc">
+        <h1>welcome javascript</h1>
+      </div>
+      <div class="section">
+        <h2><li>Syntax</li></h2>
+      </div>
+      <div class="section">
+        <div>
+<pre><code class="javascript">var x; // 변수 선언
+var y = 1; // y 변수에 1 저장
+x = 3 + y; // 변수 x에 값 연산값 저장
+
+sumAndPrint(x, y); // 함수 실행
+
+// 조건문 실행
+if (x === 0) { // x 값이 0이고 숫자 타입인지 조건 확인.
+	x = 123;
+}
+
+// 함수 정의 기명함수 방식이고 변수로 x, y를 받음
+function sumAndPrint(x, y) {
+	var sum = x + y;
+	console.log("sum: " + sum);
+	return sum;
+}
+
+var z = {
+	objectFunction : sumAndPrint // z 객체에 함수 정의
+}
+z.objectFunction(1, 2);	// 객체의 함수 실행</code></pre>
+        </div>
+      </div>
+      <div class="section">
+        <h2><li>기초문법</li></h2>
+      </div>
+      <div class="section">
+        <h3>Statements - 자바스크립트 실행되는 명령문</h3>
+        <ol  start="1">
+          <li>Statements는 ; 으로 구분되어 집니다.</li>
+          <li>종류는 Variables, Operators, Expressions, Keywords, Comments</li>
+          <ul>
+            <li>Variables - 변수</li>
+            <li>Operators - 연산자</li>
+            <li>Expressions - 표현법(기본문법)</li>
+            <li>Keywords - 키워드(루프문과 같이 네이티브코드로 정의된 내용)</li>
+            <li>Comments - 주석</li>
+          </ul>
+        </ol>
+        <div>
+          <pre><code class="javascript">var x; // 변수 선언 \<---Values
+          1 + 2; // 연산 <---Operators
+          this['test']; // <--- this키워드
+          // 주석 <--- Comments</code></pre>
+        </div>
+      </div>
+      <div class="section"><h3>Semicolons ( ; ) - 명령문종료 글자</h3>
+          <ul>
+            <li>특정 명령문은 세미콜론을 사용하지 않아도 자동으로 설정됩니다.</li>
+            <ul class="li_s">
+              <li>Empty statement</li>
+              <li>let, const, variable statement</li>
+              <li>import, export, module declaration</li>
+              <li>Expression statement</li>
+              <li>debugger</li>
+              <li>continue, break, throw</li>
+              <li>return</li>
+            </ul>
+          </ul>
+          <div>
+            <pre><code class="javascript">var x
+1 + 2</code></pre>
+          </div>
+      </div>
+      <div class="section">
+        <h3>Variables - 변수 값을 저장하는 곳입니다.</h3>
+          <ul>
+            <li>변수선언 종류</li>
+            <ol>
+              <li>var - 일반변수</li>
+              <li>let - 지역변수 ( es6 추가 됨 )</li>
+              <li>const - 읽기전용변수( 초기화 후 값 변경 불가합니다. )</li>
+            </ol>
+            <p>
+            <li>변수선언 규칙</li>
+            <ol>
+              <li>유니크도문자, 언더스코어( _ ), 달러( $ )문자를 사용할수있습니다.</li>
+              <li>javscript는 대소문자를 구분하는 case sensitive 합니다.</li>
+              <li>숫자, 문자아닌특수문자 사용 불가.</li>
+              <li>Camel Case규칙 - 변수이름을 정하는 규칙으로 첫글자는 소문자 이후 단어앞자리는 대문자를 사용합니다.</li>
+              <li>예약어는 변수명으로 사용할수 없습니다.</li>
+            </ol>
+            <p>
+            <label>사용불가 예약어</label>
+<pre><code class="">catch
+debugger
+else
+false
+if
+instanceof
+null
+public
+switch
+try
+while</code></pre>
+            <p>
+            <label>사용가능 예약어</label>
+<pre><code class="">Infinity
+NaN
+undefined</code></pre>
+          </ul>
+      </div>
+      <div class="section">
+        <h3></h3>
+          <ul>
+            <li>변수의 타입</li>
+            <ol>
+              <li>string</li>
+              <ul class="li_s">
+                <li>쿼츠 또는 더블쿼츠 사용하여 문자열의 시작과 끝을 감싸면 문자열 값이 됨.</li>
+                <li>더블 쿼츠 또는 싱글 쿼츠 안에 같은 지시어의 문자를 삽입하기위해서는 \ 역슬레시로 익스케이프처리하여야함.</li>
+                <li>역슬레쉬를 사용하려면 역슬레쉬를 하나더 붙여서 사용.</li>
+<pre><code class="">\0	Null Byte
+\b	Backspace
+\f	Form feed
+\n	New line
+\r	Carriage return
+\t	Tab
+\v	Vertical tab
+\'	Apostrophe 혹은 작은 따옴표
+\"	큰 따옴표
+\\	백슬래시
+\XXX	Latin-1 인코딩 문자는 0 - 377 사이 8진수 3자리까지 지정될 수 있습니다. 예를 들어, \251은 copyright 심볼을 표현하는 8진수 시퀀스입니다.
+\xXX	Latin-1 인코딩 문자는 00 - FF 사이의 16진수 2자리로 지정될 수 있습니다. 예를 들어, \xA9는 copyright 심볼을 표현하는 16진수 시퀀스입니다.
+\uXXXX	유니코드 문자는 16진수 4자리로 지정될 수 있습니다. 예를 들어, \u00A9는 copyright 심볼을 표현하는 유니코드 열입니다. Unicode escape sequences를 참고하세요.
+\u{XXXXX}	유니코드 코드 포인트 이스케이프. 예를 들어, \u{2F804}는 간단한 유니코드 이스케이프 \uD87E\uDC04와 같습니다.
+</code></pre>
+              </ul>
+              <li>numbers</li>
+<pre><code class="">1 상수
++1 정수
+-1 음수
+1.1 소수
+1e+2 과학적표기
+-1e-2 음의과학적표기
+-0
+NaN 값없음
+</code></pre>
+            </ol>
+          </ul>
+      </div>
+      <div class="section">
+        <h3></h3>
+        <ul>
+          <li>변수의 타입</li>
+          <ol>
+            <li>booleans - true, false</li>
+            <li>nonvalues : null, undefined</li>
+            <li>function - 함수에요</li>
+            <li>symbol - 고유값객체 ( es6 추가 됨. )</li>
+            <li>object : 위에 속하지 않은 모든 타입</li>
+            <ul class="li_s">
+              <li>배열</li>
+              <li>json</li>
+              <li>정규식</li>
+            </ul>
+          </ol>
+          <li>typeof 를 이용해서 값들을 확인 해봅시다.</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>흐름제어</h3>
+        <ol  start="1">
+          <li>Code Block ( { } )</li>
+<pre><code class="javascript">{ //코드블록 규칙
+statement1
+statement2
+statement3
+var t=1;
+var t2=2;
+}
+
+var count=0;
+while(count < 10){ //일반적인 코드블럭 사용 예
+  count++;
+}
+
+var x = 1;
+{
+  var x = 2; //코드블럭안에서는 이전 언어처럼 변수는 지역화가 되지 않아요.
+}
+console.log(x); // outputs 2
+</code></pre>
+        </ol>
+      </div>
+      <div class="section">
+        <h3></h3>
+        <ol  start="2">
+          <li>if else - 참거짓( true, false ) 값을 이용한 분기</li>
+<pre><code class="javascript">if( true ){
+  console.log("if 문 이동 되었습니다.")
+}
+
+var t=1;
+if( t>1 ){
+  console.log("1보다 크면 여기로");
+} else if( t < 1 ){
+  console.log("1보다 작으면 여기로");
+} else{
+  console.log("0 또는 널값 또는 NaN");
+}
+</code></pre>
+        <ul>
+          <li>거짓 ( false )으로 취급되는 값</li>
+          <ul>
+            <li>false</li>
+            <li>undefined</li>
+            <li>null</li>
+            <li>0</li>
+            <li>NaN</li>
+            <li>"" 빈 문자열값</li>
+          </ul>
+          <li>참 ( true )값은 거짓으로 취급되는 값 이외의 값입니다.</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3></h3>
+        <ol  start="3">
+          <li>switch - 특정 값을 비교하여 분기</li>
+            <ul>
+              <li>문자열 값과 상수와 비교 가능합니다.</li>
+            </ul>
+<pre><code class="javascript">var 레알벨류;
+레알벨류=1;
+switch(레알벨류){
+  case 1:
+    console.log(1);
+    break;
+  case 2:
+    console.log(2);
+    break;
+  case "1":
+      console.log("문자열1");
+      break;
+}
+</code></pre>
+        </ol>
+      </div>
+      <div class="section">
+        <h3></h3>
+        <ol  start="4">
+          <li>예외처리 throw</li>
+            <ul>
+              <li>예외처리를 호출합니다.</li>
+            </ul>
+<pre><code class="javascript">throw expression;
+throw "Error2";   // String type
+throw 42;         // Number type
+throw true;       // Boolean type
+throw {toString: function() { return "I'm an object!"; } };
+</code></pre>
+          <li>예외처리 try catch</li>
+            <ul>
+              <li>호출된 예외를 처리합니다.</li>
+            </ul>
+<pre><code class="javascript">try {
+  monthName = getMonthName(myMonth);
+}
+catch (e) {
+  monthName = "unknown";
+  console.log(monthName,e);
+}
+function getMonthName (mo) {
+  mo = mo-1; // Adjust month number for array index (1=Jan, 12=Dec)
+  var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul",
+                "Aug","Sep","Oct","Nov","Dec"];
+  if (months[mo] != null) {
+    return months[mo];
+  } else {
+    throw "InvalidMonthNo";
+  }
+}
+</code></pre>
+        </ol>
+      </div>
+      <div class="section do">
+        <h3></h3>
+        <ol start="5">
+          <li>예외처리 finally</li>
+            <ul>
+              <li>try catch 이후 실행되는 예외처리</li>
+            </ul>
+<pre><code class="javascript">try{
+  console.log("try");
+  return;
+}catch(e){
+  console.log("catch");
+}finally{
+  console.log("finally 항상 실행됨.");
+}
+</code></pre>
+        </ol>
+      </div>
+    </ol>
+  </div>
 </body>
+
 </html>
