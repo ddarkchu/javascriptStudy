@@ -7,7 +7,7 @@ $(document).ready(function() {
 		hljs.highlightBlock(block);
 		hljs.lineNumbersBlock(block);
 	});
-	setInterval(function(){location.reload();},10000);
+	// setInterval(function(){location.reload();},10000);
 	// $('code').each(function(i, block) {
 	//
   //   });
